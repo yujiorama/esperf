@@ -201,7 +201,7 @@ func (r *runner) Run() error {
 				r.clients <- client
 			}()
 
-			req, err := http.NewRequest("GET", entry.URL, strings.NewReader(entry.Source))
+			req, err := http.NewRequest(entry.Method, entry.URL, strings.NewReader(entry.Source))
 			if err != nil {
 				// TODO(danielfireman): Make this more elegant. Leveraging cobra error messages.
 				fmt.Printf("Error creating request: %q\n", err)

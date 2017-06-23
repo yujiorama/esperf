@@ -92,6 +92,11 @@ var genLoadspec = &cobra.Command{
 			} else {
 				entry.Source = query
 			}
+			if strings.Contains(url, "_search/template") {
+				entry.Method = "POST"
+			} else {
+				entry.Method = "GET"
+			}
 			if err := enc.Encode(entry); err != nil {
 				return err
 			}

@@ -30,6 +30,32 @@ You need go installed and `GOBIN` in your `PATH`. Once that is done, run the com
 $ go get -u github.com/danielfireman/esperf
 ```
 
+## Build
+
+Clone this repository into the `$GOPATH/src`.
+Then, let's `go build` !
+
+```bash
+$ mkdir -p ~/where/to/gopath/src/github.com/danielfireman
+$ git clone https://github.com/yujiorama/esperf.git ~/where/to/gopath/src/github.com/danielfireman/esperf
+$ cd ~/where/to/gopath/src/github.com/danielfireman/esperf
+$ env GOPATH=$(pwd)/vendor:~/where/to/gopath:${GOPATH} go build -v .
+github.com/danielfireman/esperf/vendor/github.com/spf13/pflag
+github.com/danielfireman/esperf/loadspec
+github.com/danielfireman/esperf/vendor/github.com/spenczar/tdigest
+github.com/danielfireman/esperf/metrics
+github.com/danielfireman/esperf/esmetrics
+github.com/danielfireman/esperf/reporter
+github.com/danielfireman/esperf/vendor/github.com/spf13/cobra
+github.com/danielfireman/esperf/cmd/loadspec
+github.com/danielfireman/esperf/cmd/hitcounter
+github.com/danielfireman/esperf/cmd/replay
+github.com/danielfireman/esperf/cmd
+github.com/danielfireman/esperf
+$ ls -l esperf.exe
+-rwxr-xr-x 1 y.okazawa 1049089 8228352 6月  23 16:41 esperf.exe*
+```
+
 ## Usage
 
 ### Creating synthetic load specification

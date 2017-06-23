@@ -5,6 +5,7 @@ type Entry struct {
 	DelaySinceLastNanos int64  `json:"delay_since_last_nanos"`
 	URL                 string `json:"url"`
 	Source              string `json:"source"`
+	Method              string `json:"method"`
     ID int `json:"id"`
 }
 
