@@ -208,6 +208,7 @@ func (r *runner) Run() error {
 				os.Exit(-1)
 				return
 			}
+			req.Header.Add("Content-Type", `application/json`)
 
 			if debug {
 				dReq, _ := httputil.DumpRequest(req, true)
